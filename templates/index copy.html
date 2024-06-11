@@ -21,24 +21,20 @@
         <div class="search">
             <p class="hero_text">Find anything in <span id="search_txt_highlight"><img style="width: 10px;" src="pin-8-32.png" alt=""> All Ghana</span></p>
 
-            <form style="display: flex; flex-direction: column;" action="{% url 'search_results' %}" method="get">
+            <form style="display: flex; flex-direction: column;">
                <div style="display: flex;">
                 <input style="padding-left: 15px; margin-bottom: 30px;" type="text" id="search_bar" placeholder="I am looking for.."> <button style="display: flex; align-items: center; justify-content: center;" id="search_icon"><img style="width: 100%;" src="search-svgrepo-com.png" alt=""></button></input>
                </div>    
                 <input type="number" placeholder="Price" style="height: 30px; width: 100px; border-radius: 5px; margin-bottom: 10px;">
 
                 <div style="display: flex;">
-                    <div style="margin-right: 100px;">   
-                        {% for region in regions %}                 
-                        <input type="checkbox" id="{{region.name}}" name="{{region.name}}" value="{{region.id}}">
-                        <label for="{{region.name}}">{{region.name}}</label>
-                        {% endfor %}
+                    <div style="margin-right: 100px;">                    
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox"> Accra</label>
                     </div>
-                    <div>
-                        {% for category in categories %}                   
-                        <input type="checkbox" id="{{category.name}}" name="{{category.name}}" value="{{category.id}}">
-                        <label for="{{category.name}}">{{category.name}}</label>
-                        {% endfor %}
+                    <div>                    
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox"> Phones</label>
                     </div>
                 </div>
 
@@ -49,15 +45,13 @@
     <div class="body">
         <div class="side_bar">
             <ul class="side_bar_list" style="padding-left: 7px; margin-top: 0;" >
-                {% for item in categories %}
                 <li style="display: flex;">
                     <div style="width: 30px; display: flex; align-items: center; margin-right: 15px;"><img style="width: 100%;" src="images.jpeg" alt=""></div>
-                    <p style="margin-right: 100px;">{{item.name}} <br>
+                    <p style="margin-right: 100px;">Vehicles <br>
                     <b>102,345 ads</b>
                     </p>
                     <p><img style="width: 10px;" src="arrow-right-333-svgrepo-com.png" alt=""></p>
                 </li>
-                {% endfor %}
 
             </ul>
         </div>
@@ -71,30 +65,20 @@
                 </div>
             </div>
             <h3>Trending ads</h3>
-            
             <div class="products">
-                {% for item in data %}
                 <div class="prod">
-                    <div class="img" style="
-                        background: url({{item.image}});
-                        width: 100%;
-                        height: 130px;
-                        background-position: center;
-                        background-size: cover;
-                        
-                        "></div>
+                    <div class="img"></div>
                     <div class="txt">
-                        <p>{{item.name}}<br>
-                        <span style="color: green;">GHC {{item.price}}</span>
+                        <p>Chilling Fridge<br>
+                        <span style="color: green;">GHC 2000</span>
                     </p>
                     <div class="wish">
-                        <img style="width: 100%;height: 100%;" src="bookmark-svgrepo-com-_4_.png" alt="">
+                        <img style="width: 100%;" src="bookmark-svgrepo-com-_4_.png" alt="">
                     </div>
                     </div>
                 </div>
-                {% endfor %}
+
             </div>
-            
         </div>
     </div>
 
@@ -163,224 +147,4 @@
         <h5 style="margin: 0 auto; color: rgb(2, 27, 2); font-weight: 400;">© 2024 Jiji.com.gh</h5>
     </div>
 </body>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
-
-body{
-    font-family: "Reddit Sans", sans-serif;
-    margin: 0px;
-    padding: 0px;
-    background-color: #f5f6fa;
-    
-}
-
-.hero{
-    width: 100%;
-    /* height: 350px; */
-    background: #00a635;
-    color: white;
-    padding-bottom: 50px;
-}
-.nav{
-    width: 100%;
-    height: 60px;
-    background: #00a635;
-    display: flex;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    justify-content: space-between;
-    
-}
-
-
-#nav_logo{
-    transform: scale(0.75);
-    margin-left: 50px;
-}
-.nav_list{
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    margin-right: 50px;
-}
-.nav_list li{
-    margin-right: 20px;
-}
-#nav_list_button{
-    background: #FEA03C;
-    color: white;
-    padding: 5px 20px 5px 20px;
-    border: none;
-    border-radius: 5px;
-    height: 40px;
-    width: 100px;
-}
-.search{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.hero_text{
-    margin-bottom: 50px;
-    margin-top: 80px;
-}
-#search_txt_highlight{
-    background: black;
-    padding: 3px 5px 3px 5px;
-    border-radius: 5px;
-}
-#search_bar{
-    width: 590px;
-    height: 50px;
-    border-radius: 5px;
-    resize: none;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border: none;
-}
-#search_bar::placeholder{
-    font-family: "Reddit Sans", sans-serif;
-    position: relative;
-    font-size: 15px;
-    left: 5px;
-    
-}
-#search_icon{
-    border-radius: 100%;
-    width: 50px;
-    border: none;
-    background: white;
-    height: 50px;
-    position: relative;
-    right: 60px;
-}
-
-/* Body */
-.body{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 100px;
-    
-}
-.side_bar{
-    width: 300px;
-    height: 500px;
-    background-color: white;
-    position: sticky;
-    top: 0px;
-    margin-right: 20px;
-    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-.prod_showcase{
-    width: 800px;
-    height: 1100px;
-    /* background-color: #ffffff; */
-}
-.side_bar_list{
-    list-style-type: none;
-}
-.call_t_sell{
-    display: grid;
-    width: 800px;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-}
-.box{
-    height: 200px;
-    background-color: #FEA03C;
-    box-sizing: border-box;
-}
-.box:nth-child(1){
-    background: url(./showcase_bg.png);
-}
-.products{
-    display: grid;
-    width: 8000px;
-    grid-template-columns: repeat(4,192px);
-    grid-template-rows: repeat(6,200px);
-    grid-gap: 10px;
-
-}
-
-.prod{
-    background: #ffffff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.151);
-    border-radius: 5px;
-
-
-}
-/* .img{
-    width: 100%;
-    height: 130px;
-    background-position: center;
-    background-size: cover;
-} */
-.wish{
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #ffffff;
-    padding: 10px;
-    text-align: center;
-    align-self: center;
-    margin-top: -75px;
-}
-.txt{
-    display: flex;
-    justify-content: space-around;
-}
-
-/* Footer  */
-.footer{
-    width: 100%;
-    height: 350px;
-    background-color: #00a635;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-.footer_lists{
-    display: flex;
-    justify-content: space-around;
-}
-.list{
-    font-size: 14px;
-}
-.list ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.list ul li{
-    /* margin-right: 20px; */
-    margin-bottom: 15px;
-    transition: color 0.1s ease-in;
-    cursor: pointer;
-}
-.list ul li:hover{
-    color: #ced4eb;
-}
-.countries_container{
-    width: 100%;
-}
-.countries{
-    display: flex;
-    margin: 0 auto;
-    margin-top: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
-
-}
-.nation{
-    height: 30px;
-    width: 30px;
-    background-color:white ;
-    border: black;
-    border-radius: 100%;
-    margin-right: 10px;
-}
-</style>
 </html>

@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+body{
+    font-family: "Reddit Sans", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #f5f6fa;
+    overflow: hidden;
+}
+
+.hero{
+    width: 100%;
+    /* height: 350px; */
+    background: #00a635;
+    color: white;
+    padding-bottom: 50px;
+}
+.nav{
+    width: 100%;
+    height: 60px;
+    background: #00a635;
+    display: flex;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    
+}
+
+
+#nav_logo{
+    transform: scale(0.75);
+    margin-left: 50px;
+}
+.nav_list{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+.nav_list li{
+    margin-right: 20px;
+}
+#nav_list_button{
+    background: #FEA03C;
+    color: white;
+    padding: 5px 20px 5px 20px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+}
+.search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero_text{
+    margin-bottom: 50px;
+    margin-top: 80px;
+}
+#search_txt_highlight{
+    background: black;
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
+}
+#search_bar{
+    width: 590px;
+    height: 50px;
+    border-radius: 5px;
+    resize: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: none;
+}
+#search_bar::placeholder{
+    font-family: "Reddit Sans", sans-serif;
+    position: relative;
+    font-size: 15px;
+    left: 5px;
+    
+}
+#search_icon{
+    border-radius: 100%;
+    width: 50px;
+    border: none;
+    background: white;
+    height: 50px;
+    position: relative;
+    right: 60px;
+}
+
+/* Body */
+.body{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    
+}
+.side_bar{
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+    margin-right: 20px;
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+.prod_showcase{
+    width: 800px;
+    height: 1100px;
+    /* background-color: #ffffff; */
+}
+.side_bar_list{
+    list-style-type: none;
+}
+.call_t_sell{
+    display: grid;
+    width: 800px;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+}
+.box{
+    height: 200px;
+    background-color: #FEA03C;
+    box-sizing: border-box;
+}
+.box:nth-child(1){
+    background: url(./showcase_bg.png);
+}
+.products{
+    display: grid;
+    width: 8000px;
+    grid-template-columns: repeat(4,192px);
+    grid-template-rows: repeat(6,200px);
+    grid-gap: 10px;
+
+}
+
+.prod{
+    background: #ffffff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.151);
+    border-radius: 5px;
+
+
+}
+.img{
+    width: 100%;
+    height: 130px;
+    background: url(./23871712_MTA4MC04NjQtY2U3OTVlMDI2Yw.webp);
+    background-position: center;
+    background-size: cover;
+}
+.wish{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    align-self: center;
+    margin-top: -75px;
+}
+.txt{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Footer  */
+.footer{
+    width: 100%;
+    height: 350px;
+    background-color: #00a635;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.footer_lists{
+    display: flex;
+    justify-content: space-around;
+}
+.list{
+    font-size: 14px;
+}
+.list ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list ul li{
+    /* margin-right: 20px; */
+    margin-bottom: 15px;
+    transition: color 0.1s ease-in;
+    cursor: pointer;
+}
+.list ul li:hover{
+    color: #ced4eb;
+}
+.countries_container{
+    width: 100%;
+}
+.countries{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+.nation{
+    height: 30px;
+    width: 30px;
+    background-color:white ;
+    border: black;
+    border-radius: 100%;
+    margin-right: 10px;
+}
