@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./styles.css">
-    <title>Document</title>
+    <link rel="icon" href="https://thumbs.dreamstime.com/b/sinal-e-s%C3%ADmbolo-do-%C3%ADcone-terrestre-de-cor-para-design-site-desenvolvimento-aplicativos-m%C3%B3veis-elemento-simples-da-cole%C3%A7%C3%A3o-160919412.jpg" type="image/x-icon">
+    <title>Home-Jiji</title>
 </head>
 <body>
     <div class="hero">
@@ -63,10 +64,11 @@
         </div>
         <div class="prod_showcase">
             <div class="call_t_sell">
-                <div class="box"></div>
+                <div class="boxs">
+                </div>
                 <div style="padding: 15px 0px; display: flex; justify-content: space-between; align-items: center; flex-direction: column; color: white;" class="box">
                     <b style="padding-bottom: 10px;">Got something to sell?</b>
-                    <img style="border-radius: 180px; width: 90px; height: 90px;" src="orange-plus.png" alt="">
+                    <img style="border-radius: 180px; width: 90px; height: 90px;" src="https://cdn-icons-png.flaticon.com/512/32/32339.png" alt="">
                     <p>Post an advert for free!</p>
                 </div>
             </div>
@@ -74,24 +76,26 @@
             
             <div class="products">
                 {% for item in data %}
-                <div class="prod">
-                    <div class="img" style="
-                        background: url({{item.image}});
-                        width: 100%;
-                        height: 130px;
-                        background-position: center;
-                        background-size: cover;
-                        
-                        "></div>
-                    <div class="txt">
-                        <p>{{item.name}}<br>
-                        <span style="color: green;">GHC {{item.price}}</span>
-                    </p>
-                    <div class="wish">
-                        <img style="width: 100%;height: 100%;" src="bookmark-svgrepo-com-_4_.png" alt="">
+                <a href="{% url 'product' item.id %}" style="text-decoration: none; ">
+                    <div class="prod">
+                        <div class="img" style="
+                            background: url({{item.image}});
+                            width: 100%;
+                            height: 130px;
+                            background-position: center;
+                            background-size: cover;
+                            
+                            "></div>
+                        <div class="txt">
+                            <p>{{item.name}}<br>
+                            <span style="color: green;">GHC {{item.price}}</span>
+                        </p>
+                        <div class="wish">
+                            <img style="width: 100%;height: 100%;" src="https://cdn3.iconfinder.com/data/icons/outline-color-common-9/32/bookmark_green-512.png" alt="">
+                        </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
+                </a>
                 {% endfor %}
             </div>
             
@@ -171,6 +175,7 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: #f5f6fa;
+    overflow-x: hidden;
     
 }
 
@@ -188,6 +193,7 @@ body{
     display: flex;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     justify-content: space-between;
+    position: sticky;
     
 }
 
@@ -291,6 +297,13 @@ body{
     height: 200px;
     background-color: #FEA03C;
     box-sizing: border-box;
+}
+.boxs{
+    height: 200px;
+    background: url(https://hapakenya.com/wp-content/uploads/2021/09/New-Rebrand-Face-759x500.jpeg);
+    box-sizing: border-box;
+    /* background-position: ; */
+    background-size: cover;
 }
 .box:nth-child(1){
     background: url(./showcase_bg.png);
